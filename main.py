@@ -20,11 +20,18 @@ def reply(bot, update):
         bot_say="Sorry, no te entiendo"
     bot.send_message(chat_id=update.message.chat_id, text=bot_say)
 
+def main:
 
-echo_handler = MessageHandler(Filters.text, reply)
-dispatcher.add_handler(echo_handler)
-start_handler = CommandHandler('start', start)
-dispatcher.add_handler(start_handler)
+    echo_handler = MessageHandler(Filters.text, reply)
+    dispatcher.add_handler(echo_handler)
+    start_handler = CommandHandler('start', start)
+    dispatcher.add_handler(start_handler)
+
+    updater.start_polling()
 
 
-updater.start_polling()
+if __name__ == '__main__':
+    try:
+        main()
+    except KeyboardInterrupt:
+        exit()
