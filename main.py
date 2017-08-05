@@ -20,7 +20,7 @@ def reply(bot, update):
         bot_say="Sorry, no te entiendo"
     bot.send_message(chat_id=update.message.chat_id, text=bot_say)
 
-def main:
+def main():
 
     echo_handler = MessageHandler(Filters.text, reply)
     dispatcher.add_handler(echo_handler)
